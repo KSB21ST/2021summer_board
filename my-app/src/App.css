@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.writername {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  /* width : 350px; */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -69,12 +77,12 @@ table {
   text-align: center;
 }
 .inputTitle {
-  width: 350px;
+  width: 370px;
   font-size: 16px;
   margin: 5px;
 }
 .inputContent {
-  width: 350px;
+  width: 370px;
   margin: 5px;
   font-size: 16px;
   height: 200px;

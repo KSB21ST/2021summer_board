@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function SingleTweet({tweet}){
+export default function SingleTweet({comments}){
     return(
         <div className='comments'>
-            <div className='writer'>writer: {tweet.writer}</div>
-            <div className='content'>context: {tweet.content}</div>
+            <div className='writer'>writer: {comments.writer}</div>
+            <div className='content'>context: {comments.content}</div>
         </div>
     )
 }

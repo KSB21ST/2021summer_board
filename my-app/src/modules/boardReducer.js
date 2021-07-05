@@ -57,8 +57,8 @@ const initialState = {
             password: '',
             ripples: [
                 {
-                    writer: '',
-                    content: ''
+                    r_writer: '초기값',
+                    r_content: '초기값'
                 }
             ]
         }

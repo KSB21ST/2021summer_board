@@ -16,6 +16,7 @@ function BoardContent() {
     const [content, setContent] = useState(selectRowData.content)
     const [ori_passwd, setOriPsswd] = useState(selectRowData.password)
     const [writer, setWriter] = useState(selectRowData.writer)
+    const [ripples, setRipples] = useState(selectRowData.ripples)
     const [modalOpen, setModalopen] = useState(false)
     const [password, setPassword] = useState("")
     const [buttonname, setButton] = useState("")
@@ -45,13 +46,23 @@ function BoardContent() {
             title: title,
             content: content,
             writer: writer,
-            password: ori_passwd
+            password: ori_passwd,
+            ripples: ripples
         }
         // console.log('clickSave :: ', _inputData)
         dispatch(editContent(_inputData))
         setTitle('')
         setContent('')
         history.push('/')
+    }
+
+    const inputData_ = {
+        id: selectRowData.id,
+        title: title,
+        content: content,
+        writer: writer,
+        password: ori_passwd,
+        ripples: ripples
     }
  
     const onRemove = () => {
@@ -75,6 +86,7 @@ function BoardContent() {
         if(num == 2){
             handleRipple()
         }
+        closeModal()
     }
 
     const handleDelete = () => {
@@ -152,15 +164,7 @@ function BoardContent() {
                     {/* <input type='text' className='inputRipple' placeholder='댓글을 입력하세요' onChange={handleRipple} value={ripple} />
                     <button className='rippleBtn' onClick={ () => handleRipple }> ripple </button> */}
                     {/* <RippleForm /> */}
-                    <Comments/>
-                </div>
-                <div>
-                {/* <RippleList/> */}
-                    {/* <tr>
-                        <td>{r_title}</td>
-                        <td>{r_content}</td>
-                        <td>{r_writer}</td>
-                    </tr> */}
+                    <Comments input={inputData_} dispatch={dispatch}/>
                 </div>
             </div>
         </div>
